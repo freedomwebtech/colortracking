@@ -1,11 +1,10 @@
 import time
 import numpy as np
 import cv2
-  
-# initialize the camera and grab a reference to the raw camera capture
+
 
 cap=cv2.VideoCapture(0)
-#cap=cv2.VideoCapture("/home/pi/Downloads/car.mp4")
+
 def nothing(x):
     pass
 cv2.namedWindow("Trackbars")
@@ -45,3 +44,5 @@ while True:
      key = cv2.waitKey(1) & 0xFF
      if key == ord("q"):
         break
+ cap.release()
+ cv2.destroyAllWindows()
